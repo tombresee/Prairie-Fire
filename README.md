@@ -1,7 +1,0 @@
-## PRARIE FIRE
-
-#### Welcome
-
-
-
-
