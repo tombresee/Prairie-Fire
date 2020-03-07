@@ -63,7 +63,6 @@ References
 =============
 
 
-|
 
 
 Apache Spark
