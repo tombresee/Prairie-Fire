@@ -42,7 +42,7 @@ Why Apache Spark ?
 
 
 
-**Jupyter Notebooks**
+Jupyter Notebooks
 =========================================
 
 As progression is made step-by-step, I will upload pertinent jupyter notebooks.  
