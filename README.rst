@@ -575,7 +575,7 @@ Appendix - Variant Call Format (VCF) fields breakout
 .. class:: no-web
 
 
-    .. image:: https://raw.githubusercontent.com/TomBresee/The_Spark_Genome_Project/master/ENTER/images/screengrab.png
+    .. image:: https://spark.apache.org/images/spark-runs-everywhere.png
         :alt: HTTPie in action
         :width: 100%
         :align: center
