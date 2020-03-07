@@ -6,7 +6,6 @@ Prairie Fire
 
 
 
-
 |
 |
 
@@ -197,7 +196,7 @@ FASTQ   FASTQ files contain billions of entries and are about 90-100 gigabytes i
 **Jupyter Notebooks**
 =========================================
 
-As progression is made step-by-step, I will upload pertinent jupyter notebooks.  This is the key to really understanding this complicated approach. 
+As progression is made step-by-step, I will upload pertinent jupyter notebooks.  
 
 |
 
@@ -209,66 +208,15 @@ The following are working jupyter notebooks as I dive deeper into Apache Spark, 
 
 |
 
-|
-
-
-
 
   *  `html version <https://rawcdn.githack.com/TomBresee/The_Spark_Genome_Project/18102831c1efb315f88e75407d26efc2000928bd/ENTER/working_notebooks/Hail%200.2%20Tutorial%20-%20Databricks.html>`_
 
 
 
-|
-
-
-* `Databricks 101 <https://nbviewer.jupyter.org/github/TomBresee/The_Spark_Genome_Project/blob/master/ENTER/notebooks/001-pyspark.ipynb>`_
-  — for introductory example of how to create RDD datasets and get familiar with the Databricks platform
-
-
-|
-
-
-|
-
-
-|
-
-
-* `Hail running on Apache Spark running on Ubuntu <https://nbviewer.jupyter.org/github/TomBresee/The_Spark_Genome_Project/blob/master/ENTER/working_notebooks/HAIL%20on%20Apache%20Spark.ipynb>`_
-  — successful implementation of Hail 0.2 on Apache Spark (Ubuntu-based), working example (notebook kept in the 'working notebooks' sub-folder under /ENTER)
-
-
-|
-
-* `Hail running on Databricks Apache Spark written in Scala <https://nbviewer.jupyter.org/github/TomBresee/The_Spark_Genome_Project/blob/master/ENTER/working_notebooks/hail_databricks.ipynb>`_
-  — successful implementation of Hail 0.2 on the Databricks platform in Scala code  
-
-
-|
-
-|
-
-
-Advanced Notebooks
-------------------------
-
-These are bit more complex, include things like Delta Lake, etc. 
-
-
-|
-
-
-
-* `Databricks Overview notebook <https://rawcdn.githack.com/TomBresee/The_Spark_Genome_Project/4602f11ee09c4c08f8844f57ae6aaca9f9858470/ENTER/working_notebooks/overview_001_f.html>`_
-  — **Start Here**  
-
-
 
 
 |
 |
-|
-
 
 References
 =============
@@ -437,9 +385,6 @@ R
   — the reference for SparkR
 
 
-
-
-
 |
 
 Next Generation DNA Sequencing (NGS)
@@ -473,11 +418,6 @@ Next Generation DNA Sequencing (NGS)
 * `Google Genomics Home <https://cloud.google.com/genomics/#>`_
   — Main page overview of Google Genomics program for processing petabytes of genomic data
 
-* `Google Whitepaper <https://github.com/TomBresee/The_Spark_Genome_Project/raw/master/ENTER/txt_based_info/google-genomics-whitepaper.pdf>`_
-  — Using Google Genomics API to query massive bioinformational datasets
-
-* `Spark Accelerated Genomics Processing <https://github.com/TomBresee/The_Spark_Genome_Project/raw/master/ENTER/txt_based_info/summit-talk_2019.pdf>`_
-  — Spark Summit Slides about next generation sequencing and Spark
 
 * `pyspark transformations <https://nbviewer.jupyter.org/github/jkthompson/pyspark-pictures/blob/master/pyspark-pictures.ipynb>`_
   — really good overviews of the transformations possible 
@@ -489,32 +429,6 @@ Next Generation DNA Sequencing (NGS)
   
 
 |
-
-
-
-
-
-Modify and Upload 
--------------------
-
-
-* `error message  openCostinBytes  <https://stackoverflow.com/questions/49048212/how-to-set-spark-sql-files-conf-in-pyspark>`_
-
-
-
-* `convert vcf files into delta lake <https://docs.databricks.com/_static/notebooks/genomics/vcf2delta.html>`_
-
-
-
-* `azurecln <https://www.blue-granite.com/blog/scaling-your-genomics-pipeline-to-the-cloud-with-azure-databricks>`_
-
-
-* `incorporate slides from Spark Summit 2018 <https://www.slideshare.net/SparkSummit/hail-scaling-genetic-data-analysis-with-apache-spark-keynote-by-cotton-seed>`_
-
-
-
-|
-
 |
 |
 |
