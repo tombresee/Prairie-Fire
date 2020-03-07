@@ -9,17 +9,14 @@ Prairie Fire
 |
 
 
-
 **What is this ?**  
 
-The following github repo contains detailed information about Apache Spark and Databricks
-
+The following github repo contains detailed information and worked jupyter notebooks/scripts about Apache Spark and Databricks 
 
 
 
 |
 |
-
 
 
 .. contents::
@@ -36,6 +33,7 @@ Why Apache Spark ?
 
 * Runs workloads 100x+ faster than conventional approaches
 * Distributed processing
+
 
 
 |
@@ -183,7 +181,6 @@ Databricks
   — github location of the book `Spark - The Definitive Guide' that can also be run in Databricks via the DBFS location:  dbfs:/databricks-datasets/definitive-guide/data
 
 
-
 |
 
 Genomics
@@ -211,8 +208,6 @@ Scala
 
 * `Scala examples  <http://blog.madhukaraphatak.com/introduction-to-spark-two-part-2/>`_
   — scala examples
-
-
 
 |
 
@@ -257,7 +252,6 @@ Next Generation DNA Sequencing (NGS)
 |
 |
 |
-|
 
 
 
@@ -280,7 +274,7 @@ NGS
 
 |
 |
-
+|
 
 
 
