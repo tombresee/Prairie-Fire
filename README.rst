@@ -11,7 +11,7 @@ Prairie Fire
 
 **What is this ?**  
 
-The following github repo contains detailed information and worked jupyter notebooks/scripts about Apache Spark and Databricks 
+The following github repo contains detailed information and worked jupyter notebooks/scripts about **Apache Spark** and **Databricks**
 
 
 
