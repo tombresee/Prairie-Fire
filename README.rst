@@ -32,34 +32,6 @@ The following github repo contains detailed information about Apache Spark and D
 |
 |
 
-Gene Sequencing Explained
-============================
-
-Some high level basics... 
-
-genome
-  In the fields of molecular biology and genetics, a genome is the genetic material of an organism. It consists of DNA (or RNA in RNA viruses). The genome includes both the genes (the coding regions) and the noncoding DNA, as well as mitochondrial DNA and chloroplast DNA. The study of the genome is called genomics.
-
-
-genome sequence
-  A genome sequence is the complete list of the nucleotides (A, C, G, and T for DNA genomes) that make up all the chromosomes of an individual or a species. Within a species, the vast majority of nucleotides are identical between individuals, but sequencing multiple individuals is necessary to understand the genetic diversity.
-
-NGS
-  Next generation sequencing (NGS), massively parallel or deep sequencing are related terms that describe a DNA sequencing technology which has revolutionised genomic research. Using NGS an entire human genome can be sequenced within a single day. In contrast, the previous Sanger sequencing technology, used to decipher the human genome, required over a decade to deliver the final draft.
-
-
-* Genes are incredibly complicated
-* Sequencing high level is 
-* Really short explanation of the biochemical tie-in
-* Result is huge files and huge processing time, which we believe we can alleviate with our distributed computing approach 
-
-
-
-
-|
-
-
-
 Why Apache Spark ? 
 =====================
 
