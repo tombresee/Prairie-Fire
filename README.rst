@@ -119,15 +119,11 @@ Our Approach
 
 * Research the basics of Apache Spark  
 * Research SparkSQL and pyspark API libraries  
-* Focus on building practice jupyter notebooks along our journey, step-by-step
-* Get Apache Spark (with Hadoop, Scala/sbt, JVM) running on laptop (local mode)
-* Understand how to baseline and monitor database query and access KPIs for local mode
-* Get Apache Spark run
+
 
 
 
 |
-
 
 
 |
@@ -198,7 +194,7 @@ FASTQ   FASTQ files contain billions of entries and are about 90-100 gigabytes i
 
 
 
-**Jupyter Notebooks ( < - - exciting part)**
+**Jupyter Notebooks**
 =========================================
 
 As progression is made step-by-step, I will upload pertinent jupyter notebooks.  This is the key to really understanding this complicated approach. 
@@ -213,17 +209,10 @@ The following are working jupyter notebooks as I dive deeper into Apache Spark, 
 
 |
 
-
-* `Databricks Overview notebook <https://rawcdn.githack.com/TomBresee/The_Spark_Genome_Project/4602f11ee09c4c08f8844f57ae6aaca9f9858470/ENTER/working_notebooks/overview_001_f.html>`_
-  — **Start Here**  
-
-
 |
 
 
 
-* `Pain <https://nbviewer.jupyter.org/github/TomBresee/The_Spark_Genome_Project/blob/master/ENTER/working_notebooks/Hail%200.2%20Tutorial%20-%20Databricks.ipynb>`_
-  — the notebook that almost killed me
 
   *  `html version <https://rawcdn.githack.com/TomBresee/The_Spark_Genome_Project/18102831c1efb315f88e75407d26efc2000928bd/ENTER/working_notebooks/Hail%200.2%20Tutorial%20-%20Databricks.html>`_
 
@@ -245,16 +234,11 @@ The following are working jupyter notebooks as I dive deeper into Apache Spark, 
 |
 
 
-|
-
-
 * `Hail running on Apache Spark running on Ubuntu <https://nbviewer.jupyter.org/github/TomBresee/The_Spark_Genome_Project/blob/master/ENTER/working_notebooks/HAIL%20on%20Apache%20Spark.ipynb>`_
   — successful implementation of Hail 0.2 on Apache Spark (Ubuntu-based), working example (notebook kept in the 'working notebooks' sub-folder under /ENTER)
 
 
-
 |
-
 
 * `Hail running on Databricks Apache Spark written in Scala <https://nbviewer.jupyter.org/github/TomBresee/The_Spark_Genome_Project/blob/master/ENTER/working_notebooks/hail_databricks.ipynb>`_
   — successful implementation of Hail 0.2 on the Databricks platform in Scala code  
@@ -277,8 +261,6 @@ These are bit more complex, include things like Delta Lake, etc.
 
 * `Databricks Overview notebook <https://rawcdn.githack.com/TomBresee/The_Spark_Genome_Project/4602f11ee09c4c08f8844f57ae6aaca9f9858470/ENTER/working_notebooks/overview_001_f.html>`_
   — **Start Here**  
-
-
 
 
 
@@ -430,7 +412,6 @@ Genomics
 
 
 
-
 |
 
 Scala
@@ -456,24 +437,6 @@ R
   — the reference for SparkR
 
 
-
-
-
-|
-
-Hail 0.2
---------
-
-
-* `Hail Site <https://hail.is/>`_
-  — core page for Hail
-
-
-* `Hail Github <https://github.com/hail-is/hail>`_
-  — core github for Hail
-
-  
-* `Hail on AWS EMR  <https://github.com/hms-dbmi/hail-on-EMR>`_
 
 
 
@@ -552,24 +515,12 @@ Modify and Upload
 
 |
 
-
-
-
-Powerpoint
--------------
-
-
-* `Project Click Here for PPT <https://github.com/TomBresee/The_Spark_Genome_Project/raw/master/ENTER/final_project/Project%20Slides%20-%20Spark%20Genomics.pptx>`_
-  — final project slides
-
-
-
 |
 |
 |
 
 
-Appendix - Variant Call Format (VCF) fields breakout
+Appendix - Ecosystem
 =====================================================
 
 
