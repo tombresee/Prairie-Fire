@@ -116,8 +116,6 @@ Apache Spark
 
 
 
-|
-
 
 
 Databricks
@@ -180,7 +178,6 @@ Databricks
   — github location of the book `Spark - The Definitive Guide' that can also be run in Databricks via the DBFS location:  dbfs:/databricks-datasets/definitive-guide/data
 
 
-|
 
 
 Scala
@@ -194,7 +191,6 @@ Scala
 * `Scala examples  <http://blog.madhukaraphatak.com/introduction-to-spark-two-part-2/>`_
   — scala examples
 
-|
 
 
 Next Generation DNA Sequencing (NGS)
