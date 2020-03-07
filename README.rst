@@ -32,12 +32,13 @@ Why Apache Spark ?
 =====================
 
 * Runs workloads 100x+ faster than conventional approaches
-* Distributed processing
+* True Distributed Processing
 
 
 
 |
 |
+
 
 
 
