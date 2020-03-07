@@ -241,16 +241,6 @@ Scala
 
 |
 
-R
---------
-
-
-* `SparkR in Databricks <https://docs.databricks.com/spark/latest/sparkr/index.html>`_
-  — the reference for SparkR
-
-
-|
-
 
 Next Generation DNA Sequencing (NGS)
 ---------------------------------------
