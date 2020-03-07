@@ -1,6 +1,6 @@
 
 
-Prarie Fire
+Prairie Fire
 ###################################################
 
 
@@ -9,6 +9,7 @@ Prarie Fire
 
 |
 |
+
 
 
 
@@ -21,6 +22,7 @@ The following github repo contains detailed information about Apache Spark and D
 
 |
 |
+
 
 
 .. contents::
