@@ -62,48 +62,6 @@ Our Approach
 
 |
 
-
-Our Technical Approach
-========================
-
-|
-
-- **All input sequenced files will be .VCF format (or .BAM)**
-   - Standard file format for DNA sequenced files
-
-
-- **All files are stored during the process in Apache Parquet format**
-   - This format has advantages of compressed, efficient columnar data storage format and representation
-   - Interop with Hadoop
-   - Built from the ground up with complex nested data structures in mind
-   - Uses record shredding and assembly algorithm
-   - Very efficient compression and encoding schemes
-   - We want compression but not at the cost of reading ! 
-   - We also will demonstrate the performance impact of applying the right compression and encoding scheme to the data
-   - Parquet allows compression schemes to be specified on a per-column level, and is future-proofed to allow adding more encodings as they are invented and implemented
-   - File format image `here <https://github.com/TomBresee/The_Spark_Genome_Project/raw/master/ENTER/images/FileFormat.gif>`_ and file metadata format image `here <https://github.com/TomBresee/The_Spark_Genome_Project/raw/master/ENTER/images/FileLayout.gif>`_  
-
-- **Philosopy - Keep I/O to a minimum**
-   -  Parquet 2.0   
-
-- **Parallelize everywhere we can**
-   -  process instructions in parallel
-   -  avoid jumps like 'if'  
-
-- **Minimize shuffles !**
-   -  Spark shuffles will call to io process, so we try to avoid  
-
-- **Misc**
-   -  Focus on defining workload behavior
-   -  Fully utilize 
-   -  compute vs io
-   -  Spark shuffles will call to io process, so we try to avoid  
-   -  Parquet creates a compression format for each Avro-defined data model
-   -  Avro and Parquet for data models and file formats ! 
-
-
-
-|
 |
 |
 
@@ -122,14 +80,6 @@ Jupyter Notebook Links
 ------------------------
 
 The following are working jupyter notebooks as I dive deeper into Apache Spark, Databricks, etc.  All raw .ipynb notebook files are contained under ENTER/working_notebooks repo folder.  Most of the links below are enabled via nbviewer to show the notebooks in html, to aid ease of viewing...
-
-
-|
-
-
-  *  `html version <https://rawcdn.githack.com/TomBresee/The_Spark_Genome_Project/18102831c1efb315f88e75407d26efc2000928bd/ENTER/working_notebooks/Hail%200.2%20Tutorial%20-%20Databricks.html>`_
-
-
 
 
 
@@ -218,10 +168,8 @@ Databricks
   — covers dataframes, used extensively with genomics and sparksql 
 
 
-
 * `SQL Guide <https://docs.databricks.com/spark/latest/spark-sql/index.html>`_
   — covers SQL language manual for databricks
-
 
 
 * `Delta Lake  <https://delta.io/>`_
@@ -234,7 +182,6 @@ Databricks
 
 * `Delta Lake Guide  <https://docs.databricks.com/delta/index.html>`_
   — Delta Lake is an open source storage layer that brings reliability to data lakes. Delta Lake provides ACID transactions, scalable metadata handling, and unifies streaming and batch data processing. Delta Lake runs on top of your existing data lake and is fully compatible with Apache Spark APIs.
-
 
 
 * `Connecting BI Tools  <https://docs.databricks.com/user-guide/bi/jdbc-odbc-bi.html>`_
@@ -259,7 +206,6 @@ Databricks
 
 * `Spark Definitive Guide <https://github.com/databricks/Spark-The-Definitive-Guide>`_
   — github location of the book `Spark - The Definitive Guide' that can also be run in Databricks via the DBFS location:  dbfs:/databricks-datasets/definitive-guide/data
-
 
 
 
@@ -305,6 +251,7 @@ R
 
 |
 
+
 Next Generation DNA Sequencing (NGS)
 ---------------------------------------
 
@@ -330,12 +277,8 @@ Next Generation DNA Sequencing (NGS)
 * `Big Data Genomics <http://bdgenomics.org/>`_
   — Variant Calling with Cannoli, ADAM, Avocado, and DECA
 
-* `Databricks Unified Analytics Platform for Genomics <https://github.com/TomBresee/The_Spark_Genome_Project/raw/master/ENTER/txt_based_info/Unified_Analytics_Platform_for_Genomics_Databricks.pdf>`_
-  — Blueprint data for new Databricks Genomics platform 
-
 * `Google Genomics Home <https://cloud.google.com/genomics/#>`_
   — Main page overview of Google Genomics program for processing petabytes of genomic data
-
 
 * `pyspark transformations <https://nbviewer.jupyter.org/github/jkthompson/pyspark-pictures/blob/master/pyspark-pictures.ipynb>`_
   — really good overviews of the transformations possible 
@@ -350,6 +293,7 @@ Next Generation DNA Sequencing (NGS)
 |
 |
 |
+
 
 
 Gene Sequencing Explained
@@ -367,11 +311,6 @@ genome sequence
 NGS
   Next generation sequencing (NGS), massively parallel or deep sequencing are related terms that describe a DNA sequencing technology which has revolutionised genomic research. Using NGS an entire human genome can be sequenced within a single day. In contrast, the previous Sanger sequencing technology, used to decipher the human genome, required over a decade to deliver the final draft.
 
-
-* Genes are incredibly complicated
-* Sequencing high level is 
-* Really short explanation of the biochemical tie-in
-* Result is huge files and huge processing time, which we believe we can alleviate with our distributed computing approach 
 
 
 |
