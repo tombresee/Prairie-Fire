@@ -5,7 +5,6 @@ Prairie Fire
 
 
 
-
 |
 |
 
@@ -67,45 +66,6 @@ Why Apache Spark ?
 
 * Runs workloads 100x+ faster than conventional approaches
 * Distributed processing
-
-
-
-
-
-
-|
-
-Background
-==============
-
-Apache Spark is an open-source distributed general-purpose cluster computing framework with (mostly) in-memory data processing engine that can do ETL, analytics, machine learning and graph processing on large volumes of data at rest (batch processing) or in motion (streaming processing) with rich concise high-level APIs for the programming languages: Scala, Python, Java, R, and SQL.
-
-
-
-
-|
-
-
-
-Think big picture.  We need to change our perception on what we consider a LOT of data...
-
-
-
-
-|
-
-.. class:: no-web
-
-
-    .. image:: https://raw.githubusercontent.com/TomBresee/The_Spark_Genome_Project/master/ENTER/images/purple.jpg 
-        :alt: HTTPie in action
-        :width: 100%
-        :align: center
-
-
-.. class:: no-web no-pdf
-
-
 
 
 
