@@ -10,7 +10,6 @@ Prairie Fire
 
 
 
-
 **What is this ?**  
 
 The following github repo contains detailed information about Apache Spark and Databricks
@@ -30,7 +29,7 @@ The following github repo contains detailed information about Apache Spark and D
 
 |
 |
-|
+
 
 Why Apache Spark ? 
 =====================
@@ -39,33 +38,8 @@ Why Apache Spark ?
 * Distributed processing
 
 
-
 |
 |
-|
-
-
-Our Approach
-==============
-
-* Research the basics of Apache Spark  
-* Research SparkSQL and pyspark API libraries  
-
-
-
-
-|
-
-
-|
-
-
-|
-
-|
-|
-
-
 
 
 
@@ -83,6 +57,7 @@ The following are working jupyter notebooks as I dive deeper into Apache Spark, 
 
 
 
+|
 |
 |
 
