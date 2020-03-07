@@ -1,186 +1,595 @@
-gRPC Python Tools
-=================
 
-Package for gRPC Python tools.
 
-Supported Python Versions
--------------------------
-Python >= 3.5
+Prarie Fire
+###################################################
 
-Deprecated Python Versions
---------------------------
-Python == 2.7. Python 2.7 support will be removed on January 1, 2020.
 
-Installation
-------------
 
-The gRPC Python tools package is available for Linux, Mac OS X, and Windows
-running Python 2.7.
 
-Installing From PyPI
-~~~~~~~~~~~~~~~~~~~~
 
-If you are installing locally...
+|
+|
 
-::
 
-  $ pip install grpcio-tools
 
-Else system wide (on Ubuntu)...
+**What is this ?**  
 
-::
+The following github repo contains detailed information about Apache Spark and Databricks
 
-  $ sudo pip install grpcio-tools
 
-If you're on Windows make sure that you installed the :code:`pip.exe` component
-when you installed Python (if not go back and install it!) then invoke:
 
-::
 
-  $ pip.exe install grpcio-tools
+|
+|
 
-Windows users may need to invoke :code:`pip.exe` from a command line ran as
-administrator.
 
-n.b. On Windows and on Mac OS X one *must* have a recent release of :code:`pip`
-to retrieve the proper wheel from PyPI. Be sure to upgrade to the latest
-version!
+.. contents::
 
-You might also need to install Cython to handle installation via the source
-distribution if gRPC Python's system coverage with wheels does not happen to
-include your system.
+.. section-numbering::
 
-Installing From Source
-~~~~~~~~~~~~~~~~~~~~~~
 
-Building from source requires that you have the Python headers (usually a
-package named :code:`python-dev`) and Cython installed. It further requires a
-GCC-like compiler to go smoothly; you can probably get it to work without
-GCC-like stuff, but you may end up having a bad time.
+|
+|
+|
 
-::
+Gene Sequencing Explained
+============================
 
-  $ export REPO_ROOT=grpc  # REPO_ROOT can be any directory of your choice
-  $ git clone -b $(curl -L https://grpc.io/release) https://github.com/grpc/grpc $REPO_ROOT
-  $ cd $REPO_ROOT
-  $ git submodule update --init
+Some high level basics... 
 
-  $ cd tools/distrib/python/grpcio_tools
-  $ python ../make_grpcio_tools.py
+genome
+  In the fields of molecular biology and genetics, a genome is the genetic material of an organism. It consists of DNA (or RNA in RNA viruses). The genome includes both the genes (the coding regions) and the noncoding DNA, as well as mitochondrial DNA and chloroplast DNA. The study of the genome is called genomics.
 
-  # For the next command do `sudo pip install` if you get permission-denied errors
-  $ GRPC_PYTHON_BUILD_WITH_CYTHON=1 pip install .
 
-You cannot currently install Python from source on Windows. Things might work
-out for you in MSYS2 (follow the Linux instructions), but it isn't officially
-supported at the moment.
+genome sequence
+  A genome sequence is the complete list of the nucleotides (A, C, G, and T for DNA genomes) that make up all the chromosomes of an individual or a species. Within a species, the vast majority of nucleotides are identical between individuals, but sequencing multiple individuals is necessary to understand the genetic diversity.
 
-Troubleshooting
-~~~~~~~~~~~~~~~
+NGS
+  Next generation sequencing (NGS), massively parallel or deep sequencing are related terms that describe a DNA sequencing technology which has revolutionised genomic research. Using NGS an entire human genome can be sequenced within a single day. In contrast, the previous Sanger sequencing technology, used to decipher the human genome, required over a decade to deliver the final draft.
 
-Help, I ...
 
-* **... see a** :code:`pkg_resources.VersionConflict` **when I try to install
-  grpc**
+* Genes are incredibly complicated
+* Sequencing high level is 
+* Really short explanation of the biochemical tie-in
+* Result is huge files and huge processing time, which we believe we can alleviate with our distributed computing approach 
 
-  This is likely because :code:`pip` doesn't own the offending dependency,
-  which in turn is likely because your operating system's package manager owns
-  it. You'll need to force the installation of the dependency:
 
-  :code:`pip install --ignore-installed $OFFENDING_DEPENDENCY`
 
-  For example, if you get an error like the following:
 
-  ::
+|
 
-    Traceback (most recent call last):
-    File "<string>", line 17, in <module>
-     ...
-    File "/usr/lib/python2.7/dist-packages/pkg_resources.py", line 509, in find
-      raise VersionConflict(dist, req)
-    pkg_resources.VersionConflict: (six 1.8.0 (/usr/lib/python2.7/dist-packages), Requirement.parse('six>=1.10'))
 
-  You can fix it by doing:
 
-  ::
 
-    sudo pip install --ignore-installed six
+Why Apache Spark ? 
+=====================
 
-* **... see compiler errors on some platforms when either installing from source or from the source distribution**
+* Runs workloads 100x+ faster than conventional approaches
+* Distributed processing
 
-  If you see
 
-  ::
 
-    /tmp/pip-build-U8pSsr/cython/Cython/Plex/Scanners.c:4:20: fatal error: Python.h: No such file or directory
-    #include "Python.h"
-                    ^
-    compilation terminated.
 
-  You can fix it by installing `python-dev` package. i.e
 
-  ::
 
-    sudo apt-get install python-dev
+|
 
-  If you see something similar to:
+Background
+==============
 
-  ::
+Apache Spark is an open-source distributed general-purpose cluster computing framework with (mostly) in-memory data processing engine that can do ETL, analytics, machine learning and graph processing on large volumes of data at rest (batch processing) or in motion (streaming processing) with rich concise high-level APIs for the programming languages: Scala, Python, Java, R, and SQL.
 
-    third_party/protobuf/src/google/protobuf/stubs/mathlimits.h:173:31: note: in expansion of macro 'SIGNED_INT_MAX'
-    static const Type kPosMax = SIGNED_INT_MAX(Type); \\
-                               ^
 
-  And your toolchain is GCC (at the time of this writing, up through at least
-  GCC 6.0), this is probably a bug where GCC chokes on constant expressions
-  when the :code:`-fwrapv` flag is specified. You should consider setting your
-  environment with :code:`CFLAGS=-fno-wrapv` or using clang (:code:`CC=clang`).
 
-Usage
------
 
-Given protobuf include directories :code:`$INCLUDE`, an output directory
-:code:`$OUTPUT`, and proto files :code:`$PROTO_FILES`, invoke as:
+|
 
-::
 
-  $ python -m grpc.tools.protoc -I$INCLUDE --python_out=$OUTPUT --grpc_python_out=$OUTPUT $PROTO_FILES
 
-To use as a build step in distutils-based projects, you may use the provided
-command class in your :code:`setup.py`:
+Think big picture.  We need to change our perception on what we consider a LOT of data...
 
-::
 
-  setuptools.setup(
-    # ...
-    cmdclass={
-      'build_proto_modules': grpc.tools.command.BuildPackageProtos,
-    }
-    # ...
-  )
 
-Invocation of the command will walk the project tree and transpile every
-:code:`.proto` file into a :code:`_pb2.py` file in the same directory.
 
-Note that this particular approach requires :code:`grpcio-tools` to be
-installed on the machine before the setup script is invoked (i.e. no
-combination of :code:`setup_requires` or :code:`install_requires` will provide
-access to :code:`grpc.tools.command.BuildPackageProtos` if it isn't already
-installed). One way to work around this can be found in our
-:code:`grpcio-health-checking`
-`package <https://pypi.python.org/pypi/grpcio-health-checking>`_:
+|
 
-::
+.. class:: no-web
 
-  class BuildPackageProtos(setuptools.Command):
-    """Command to generate project *_pb2.py modules from proto files."""
-    # ...
-    def run(self):
-      from grpc.tools import command
-      command.build_package_protos(self.distribution.package_dir[''])
 
-Now including :code:`grpcio-tools` in :code:`setup_requires` will provide the
-command on-setup as desired.
+    .. image:: https://raw.githubusercontent.com/TomBresee/The_Spark_Genome_Project/master/ENTER/images/purple.jpg 
+        :alt: HTTPie in action
+        :width: 100%
+        :align: center
 
-For more information on command classes, consult :code:`distutils` and
-:code:`setuptools` documentation.
+
+.. class:: no-web no-pdf
+
+
+
+
+
+|
+|
+|
+
+Our Approach
+==============
+
+* Research the basics of Apache Spark  
+* Research SparkSQL and pyspark API libraries  
+* Focus on building practice jupyter notebooks along our journey, step-by-step
+* Get Apache Spark (with Hadoop, Scala/sbt, JVM) running on laptop (local mode)
+* Understand how to baseline and monitor database query and access KPIs for local mode
+* Get Apache Spark run
+
+
+
+|
+
+
+
+|
+
+
+|
+
+
+Our Technical Approach
+========================
+
+|
+
+- **All input sequenced files will be .VCF format (or .BAM)**
+   - Standard file format for DNA sequenced files
+
+
+=====   ===========
+File    Description
+=====   ===========
+VCF     VCF stands for Variant Call Format. It is a standardized text file format for representing SNP, INDEL, SV and CNV variation calls. SNPs (Single Sucleotide Polymorphisms, pronounced “snips”), are the most common type of genetic variation among people. Each SNP represents a difference in a single DNA building block, called a nucleotide. This is the most used VCF.
+
+BAM     Binary Alignment Map (BAM) is the comprehensive raw data of genome sequencing; it consists of the lossless, compressed binary representation of the Sequence Alignment Map. BAM files are 90-100 gigabytes in size. They are generated by aligning the FASTQ files to the reference genome.
+
+FASTQ   FASTQ files contain billions of entries and are about 90-100 gigabytes in size.  Truly raw data.           
+=====   ===========  
+
+
+ Note:  VCF files include SNPs, INDELs, CNV and SV
+
+
+- **All files are stored during the process in Apache Parquet format**
+   - This format has advantages of compressed, efficient columnar data storage format and representation
+   - Interop with Hadoop
+   - Built from the ground up with complex nested data structures in mind
+   - Uses record shredding and assembly algorithm
+   - Very efficient compression and encoding schemes
+   - We want compression but not at the cost of reading ! 
+   - We also will demonstrate the performance impact of applying the right compression and encoding scheme to the data
+   - Parquet allows compression schemes to be specified on a per-column level, and is future-proofed to allow adding more encodings as they are invented and implemented
+   - File format image `here <https://github.com/TomBresee/The_Spark_Genome_Project/raw/master/ENTER/images/FileFormat.gif>`_ and file metadata format image `here <https://github.com/TomBresee/The_Spark_Genome_Project/raw/master/ENTER/images/FileLayout.gif>`_  
+
+- **Philosopy - Keep I/O to a minimum**
+   -  Parquet 2.0   
+
+- **Parallelize everywhere we can**
+   -  process instructions in parallel
+   -  avoid jumps like 'if'  
+
+- **Minimize shuffles !**
+   -  Spark shuffles will call to io process, so we try to avoid  
+
+- **Misc**
+   -  Focus on defining workload behavior
+   -  Fully utilize 
+   -  compute vs io
+   -  Spark shuffles will call to io process, so we try to avoid  
+   -  Parquet creates a compression format for each Avro-defined data model
+   -  Avro and Parquet for data models and file formats ! 
+
+
+
+|
+|
+|
+
+
+
+
+
+**Jupyter Notebooks ( < - - exciting part)**
+=========================================
+
+As progression is made step-by-step, I will upload pertinent jupyter notebooks.  This is the key to really understanding this complicated approach. 
+
+|
+
+Jupyter Notebook Links
+------------------------
+
+The following are working jupyter notebooks as I dive deeper into Apache Spark, Databricks, etc.  All raw .ipynb notebook files are contained under ENTER/working_notebooks repo folder.  Most of the links below are enabled via nbviewer to show the notebooks in html, to aid ease of viewing...
+
+
+|
+
+
+* `Databricks Overview notebook <https://rawcdn.githack.com/TomBresee/The_Spark_Genome_Project/4602f11ee09c4c08f8844f57ae6aaca9f9858470/ENTER/working_notebooks/overview_001_f.html>`_
+  — **Start Here**  
+
+
+|
+
+
+
+* `Pain <https://nbviewer.jupyter.org/github/TomBresee/The_Spark_Genome_Project/blob/master/ENTER/working_notebooks/Hail%200.2%20Tutorial%20-%20Databricks.ipynb>`_
+  — the notebook that almost killed me
+
+  *  `html version <https://rawcdn.githack.com/TomBresee/The_Spark_Genome_Project/18102831c1efb315f88e75407d26efc2000928bd/ENTER/working_notebooks/Hail%200.2%20Tutorial%20-%20Databricks.html>`_
+
+
+
+|
+
+
+* `Databricks 101 <https://nbviewer.jupyter.org/github/TomBresee/The_Spark_Genome_Project/blob/master/ENTER/notebooks/001-pyspark.ipynb>`_
+  — for introductory example of how to create RDD datasets and get familiar with the Databricks platform
+
+
+|
+
+
+|
+
+
+|
+
+
+|
+
+
+* `Hail running on Apache Spark running on Ubuntu <https://nbviewer.jupyter.org/github/TomBresee/The_Spark_Genome_Project/blob/master/ENTER/working_notebooks/HAIL%20on%20Apache%20Spark.ipynb>`_
+  — successful implementation of Hail 0.2 on Apache Spark (Ubuntu-based), working example (notebook kept in the 'working notebooks' sub-folder under /ENTER)
+
+
+
+|
+
+
+* `Hail running on Databricks Apache Spark written in Scala <https://nbviewer.jupyter.org/github/TomBresee/The_Spark_Genome_Project/blob/master/ENTER/working_notebooks/hail_databricks.ipynb>`_
+  — successful implementation of Hail 0.2 on the Databricks platform in Scala code  
+
+
+|
+
+|
+
+
+Advanced Notebooks
+------------------------
+
+These are bit more complex, include things like Delta Lake, etc. 
+
+
+|
+
+
+
+* `Databricks Overview notebook <https://rawcdn.githack.com/TomBresee/The_Spark_Genome_Project/4602f11ee09c4c08f8844f57ae6aaca9f9858470/ENTER/working_notebooks/overview_001_f.html>`_
+  — **Start Here**  
+
+
+
+
+
+
+|
+|
+|
+
+
+References
+=============
+
+
+|
+
+
+Apache Spark
+---------------
+
+
+* `Apache Spark Website <https://spark.apache.org/>`_
+  — the core website for Apache Spark 
+
+
+* `Apache Spark Documentation <https://spark.apache.org/docs/latest/>`_
+  — the main documentation link 
+
+
+* `Spark SQL DataFrames and Datasets Guide <https://spark.apache.org/docs/latest/sql-programming-guide.html>`_
+  — the detailed information about using SparkSQL
+
+
+
+* `Spark Python API Docs  <https://spark.apache.org/docs/latest/api/python/index.html>`_
+  — covers pyspark .methods and commands 
+
+
+
+* `Cluster Mode Overview   <https://spark.apache.org/docs/latest/cluster-overview.html>`_
+  — how Spark runs on clusters
+
+
+
+* `Gitbook Internals of Apache Spark   <https://jaceklaskowski.gitbooks.io/mastering-apache-spark/>`_
+  — really really good overview of how Apache Spark functions
+
+
+
+* `Gitbook Internals of Apache Spark SQL  <https://jaceklaskowski.gitbooks.io/mastering-spark-sql/>`_
+  — same author, but covering SparkSQL
+
+
+
+* `Github Apache Spark  <https://github.com/apache/spark>`_
+  — the main Github page for Apache Spark
+
+
+
+* `Github Spark Examples  <https://github.com/apache/spark/tree/master/examples/src/main>`_
+  — you can see specific python, scala, and r examples you can run 
+
+
+* `Hadoop <https://hadoop.apache.org/>`_
+  — Hadoop Standard Library
+
+
+
+|
+
+
+
+Databricks
+-------------
+
+
+* `Documentation <https://docs.databricks.com/>`_
+  — the main documentation link for Databricks
+
+
+* `User Guide <https://docs.databricks.com/user-guide/index.html>`_
+  — the main user manual for Databricks
+
+
+* `Forum for Questions <https://forums.databricks.com/index.html>`_
+  — questions and answers
+
+
+* `Dataframe Guide <https://docs.databricks.com/spark/latest/dataframes-datasets/index.html>`_
+  — covers dataframes, used extensively with genomics and sparksql 
+
+
+
+* `SQL Guide <https://docs.databricks.com/spark/latest/spark-sql/index.html>`_
+  — covers SQL language manual for databricks
+
+
+
+* `Delta Lake  <https://delta.io/>`_
+  — delta lake is an open-source storage layer that brings ACID transactions to Apache Spark workloads
+
+
+* `Github Delta Lake  <https://github.com/delta-io/delta>`_
+  — github location
+
+
+* `Delta Lake Guide  <https://docs.databricks.com/delta/index.html>`_
+  — Delta Lake is an open source storage layer that brings reliability to data lakes. Delta Lake provides ACID transactions, scalable metadata handling, and unifies streaming and batch data processing. Delta Lake runs on top of your existing data lake and is fully compatible with Apache Spark APIs.
+
+
+
+* `Connecting BI Tools  <https://docs.databricks.com/user-guide/bi/jdbc-odbc-bi.html>`_
+  — JDBC/ODBC driver and connectivity 
+
+
+* `Connecting MySQL Workbench <https://docs.databricks.com/user-guide/bi/workbenchj.html>`_
+  — Connecting org.apache.hive.jdbc.HiveDriver driver definition  
+
+
+* `Hipster Scala Example <https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/8497971343024764/53198984527781/2559267461126367/latest.html>`_
+  — Scala example with variant spark
+
+
+* `Databricks Connect  <https://docs.azuredatabricks.net/user-guide/dev-tools/db-connect.html>`_
+  — direct CLI access to the instance
+
+
+* `Databricks Supported Instance Types <https://databricks.com/product/aws-pricing/instance-types>`_
+  — lists the different types of VM instances possible 
+
+
+* `Spark Definitive Guide <https://github.com/databricks/Spark-The-Definitive-Guide>`_
+  — github location of the book `Spark - The Definitive Guide' that can also be run in Databricks via the DBFS location:  dbfs:/databricks-datasets/definitive-guide/data
+
+
+
+
+|
+
+Genomics
+-------------
+
+
+* `Hail Scala Genomics ETL Tutorial <https://lamastex.github.io/scalable-data-science/sds/2/2/db/999_05_StudentProject_HailScalaGenomicsETLTutorial.html>`_
+  — Written by Dmytro Kryvokhyzha, excellent overview of using Databricks in Scala with Hail
+
+ 
+* `Variant Spark Example <https://docs.databricks.com/_static/notebooks/variant-spark-hipster-index.html>`_
+  — Demo custom machine learning library for real-time genomic data analysis with synthentic 'HipsterIndex' in Scala (VariantSpark_HipsterIndex_Spark2.2)
+
+
+
+
+|
+
+Scala
+--------
+
+
+* `Scala <https://www.scala-lang.org/>`_
+  — the main website for Scala.  There is no getting around it.  You want to push the envelope, you must learn Scala...
+
+
+* `Scala examples  <http://blog.madhukaraphatak.com/introduction-to-spark-two-part-2/>`_
+  — scala examples
+
+
+
+|
+
+R
+--------
+
+
+* `SparkR in Databricks <https://docs.databricks.com/spark/latest/sparkr/index.html>`_
+  — the reference for SparkR
+
+
+
+
+
+|
+
+Hail 0.2
+--------
+
+
+* `Hail Site <https://hail.is/>`_
+  — core page for Hail
+
+
+* `Hail Github <https://github.com/hail-is/hail>`_
+  — core github for Hail
+
+  
+* `Hail on AWS EMR  <https://github.com/hms-dbmi/hail-on-EMR>`_
+
+
+
+|
+
+Next Generation DNA Sequencing (NGS)
+---------------------------------------
+
+
+* `Genetics Home Reference  <https://ghr.nlm.nih.gov/>`_
+  — an introduction Genetics
+
+* `What is DNA <https://ghr.nlm.nih.gov/primer/basics/dna>`_
+  — DNA breakdown
+
+* `VCF  <https://faculty.washington.edu/browning/intro-to-vcf.html#example>`_
+  — an introduction to the genomic Variant Call Format file type 
+
+* `VCF Specification  <https://samtools.github.io/hts-specs/VCFv4.3.pdf>`_
+  — the variant call format specification, its written like a clean engineering breakout doc, its only 36 pages dude, just read it 
+
+* `Genetic Data VCF BAM FASTQ  <https://us.dantelabs.com/blogs/news/genetic-data-fastq-bam-and-vcf>`_
+  — The big picture view of the file format options and their place in sequencing
+
+* `Hail <https://hail.is/>`_
+  — this is where it starts getting very complicated
+
+* `Big Data Genomics <http://bdgenomics.org/>`_
+  — Variant Calling with Cannoli, ADAM, Avocado, and DECA
+
+* `Databricks Unified Analytics Platform for Genomics <https://github.com/TomBresee/The_Spark_Genome_Project/raw/master/ENTER/txt_based_info/Unified_Analytics_Platform_for_Genomics_Databricks.pdf>`_
+  — Blueprint data for new Databricks Genomics platform 
+
+* `Google Genomics Home <https://cloud.google.com/genomics/#>`_
+  — Main page overview of Google Genomics program for processing petabytes of genomic data
+
+* `Google Whitepaper <https://github.com/TomBresee/The_Spark_Genome_Project/raw/master/ENTER/txt_based_info/google-genomics-whitepaper.pdf>`_
+  — Using Google Genomics API to query massive bioinformational datasets
+
+* `Spark Accelerated Genomics Processing <https://github.com/TomBresee/The_Spark_Genome_Project/raw/master/ENTER/txt_based_info/summit-talk_2019.pdf>`_
+  — Spark Summit Slides about next generation sequencing and Spark
+
+* `pyspark transformations <https://nbviewer.jupyter.org/github/jkthompson/pyspark-pictures/blob/master/pyspark-pictures.ipynb>`_
+  — really good overviews of the transformations possible 
+
+
+* `json lines (not json) <http://jsonlines.org/>`_
+  —  this page describes the JSON Lines text format, also called newline-delimited JSON. JSON Lines is a convenient format for storing structured data that may be processed one record at a time. It works well with unix-style text processing tools and shell pipelines. It's a great format for log files. It's also a flexible format for passing messages between cooperating processes. SSON Lines handles tabular data cleanly and without ambiguity. Stream compressors like gzip or bzip2 are recommended for saving space, resulting in .jsonl.gz or .jsonl.bz2 files...
+
+  
+
+|
+
+
+
+
+
+Modify and Upload 
+-------------------
+
+
+* `error message  openCostinBytes  <https://stackoverflow.com/questions/49048212/how-to-set-spark-sql-files-conf-in-pyspark>`_
+
+
+
+* `convert vcf files into delta lake <https://docs.databricks.com/_static/notebooks/genomics/vcf2delta.html>`_
+
+
+
+* `azurecln <https://www.blue-granite.com/blog/scaling-your-genomics-pipeline-to-the-cloud-with-azure-databricks>`_
+
+
+* `incorporate slides from Spark Summit 2018 <https://www.slideshare.net/SparkSummit/hail-scaling-genetic-data-analysis-with-apache-spark-keynote-by-cotton-seed>`_
+
+
+
+|
+
+
+
+
+Powerpoint
+-------------
+
+
+* `Project Click Here for PPT <https://github.com/TomBresee/The_Spark_Genome_Project/raw/master/ENTER/final_project/Project%20Slides%20-%20Spark%20Genomics.pptx>`_
+  — final project slides
+
+
+
+|
+|
+|
+
+
+Appendix - Variant Call Format (VCF) fields breakout
+=====================================================
+
+
+
+.. class:: no-web
+
+
+    .. image:: https://raw.githubusercontent.com/TomBresee/The_Spark_Genome_Project/master/ENTER/images/screengrab.png
+        :alt: HTTPie in action
+        :width: 100%
+        :align: center
+
+.. class:: no-web no-pdf
+
+
+
+|
+|
+|
+|
+|
+|
+
+
+
