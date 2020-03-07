@@ -47,7 +47,6 @@ Why Apache Spark ?
 
 As progression is made step-by-step, I will upload pertinent jupyter notebooks.  
 
-|
 
 Jupyter Notebook Links
 ------------------------
