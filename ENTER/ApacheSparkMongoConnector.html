@@ -13181,7 +13181,7 @@ See <a href="https://www.mongodb.com/products/spark-connector">https://www.mongo
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><img src="https://github.com/tombresee/Prairie-Fire/raw/master/ENTER/spark-connector-diagram.png" width="600"></p>
+<p><img src="https://github.com/tombresee/Prairie-Fire/raw/master/ENTER/spark-connector-diagram.png" width="500"></p>
 
 </div>
 </div>
@@ -13280,7 +13280,8 @@ See <a href="https://www.mongodb.com/products/spark-connector">https://www.mongo
 
     <span class="c1"># OFFICIALLY READING from the MongoDB collection, **VIA** the spark connector</span>
     <span class="c1"># i.e. using the enhanced spark connector built for mongo to stream it faster</span>
-    <span class="c1"># effectively:  assigning the collection to a DataFrame with spark.read() from within the pyspark shell    </span>
+    <span class="c1"># effectively:  assigning the collection to a DataFrame with spark.read() </span>
+    <span class="c1"># from within the pyspark shell    </span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">spark</span><span class="o">.</span><span class="n">read</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;mongo&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
 
 
@@ -13305,10 +13306,10 @@ See <a href="https://www.mongodb.com/products/spark-connector">https://www.mongo
 
 
 <span class="o">./</span><span class="nb">bin</span><span class="o">/</span><span class="n">spark</span><span class="o">-</span><span class="n">submit</span> <span class="o">--</span><span class="n">master</span> <span class="s2">&quot;local[*]&quot;</span>  \
-                     <span class="o">--</span><span class="n">conf</span> <span class="s2">&quot;spark.mongodb.input.uri=mongodb://127.0.0.1/stadium_db.stadium_collection?readPreference=primaryPreferred&quot;</span> \
-                     <span class="o">--</span><span class="n">conf</span> <span class="s2">&quot;spark.mongodb.output.uri=mongodb://127.0.0.1/stadium_db.stadium_collection&quot;</span> \
-                     <span class="o">--</span><span class="n">packages</span> <span class="n">org</span><span class="o">.</span><span class="n">mongodb</span><span class="o">.</span><span class="n">spark</span><span class="p">:</span><span class="n">mongo</span><span class="o">-</span><span class="n">spark</span><span class="o">-</span><span class="n">connector_2</span><span class="o">.</span><span class="mi">11</span><span class="p">:</span><span class="mf">2.2</span><span class="o">.</span><span class="mi">7</span> \
-                     <span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">stadium_analysis</span><span class="o">.</span><span class="n">py</span>
+<span class="o">--</span><span class="n">conf</span> <span class="s2">&quot;spark.mongodb.input.uri=mongodb://127.0.0.1/stadium_db.stadium_collection?readPreference=primaryPreferred&quot;</span> \
+<span class="o">--</span><span class="n">conf</span> <span class="s2">&quot;spark.mongodb.output.uri=mongodb://127.0.0.1/stadium_db.stadium_collection&quot;</span> \
+<span class="o">--</span><span class="n">packages</span> <span class="n">org</span><span class="o">.</span><span class="n">mongodb</span><span class="o">.</span><span class="n">spark</span><span class="p">:</span><span class="n">mongo</span><span class="o">-</span><span class="n">spark</span><span class="o">-</span><span class="n">connector_2</span><span class="o">.</span><span class="mi">11</span><span class="p">:</span><span class="mf">2.2</span><span class="o">.</span><span class="mi">7</span> \
+<span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">stadium_analysis</span><span class="o">.</span><span class="n">py</span>
 
 
 <span class="c1"># mongodb input and output: </span>
