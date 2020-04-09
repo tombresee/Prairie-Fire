@@ -1,0 +1,2 @@
+Run ID,Name,Source Type,Source Name,User,Status,max_depth,n_estimators,mse
+c2e07b090d4b417c86eb8a8704e118ea,RF-Grid-Search,NOTEBOOK,/Users/tbresee@mail.smu.edu/ACADEMY_TRAINING/MLflow-1.2.0-SPNC/Python/Solutions/Labs/02-Lab,tbresee@mail.smu.edu,FINISHED,15,100,6085.808952140405
