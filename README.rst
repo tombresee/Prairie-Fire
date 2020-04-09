@@ -13,7 +13,7 @@ Prairie Fire
 **What is this ?**  
 
 The following github repo (updated periodically) contains detailed information, worked jupyter notebooks, and scripts associated with:
- 
+
 * Apache Spark
 * Databricks
 
@@ -78,8 +78,13 @@ Apache Spark
 
 
 * `Apache Spark Documentation <https://spark.apache.org/docs/latest/>`_
-  — the main documentation link 
+  — the main documentation link (As of April 2020, core version is Apache Spark 2.4.5)
 
+
+* `Contributing to Spark <https://spark.apache.org/contributing.html>`_
+  — the main link for contributing
+
+  
 
 * `Spark SQL DataFrames and Datasets Guide <https://spark.apache.org/docs/latest/sql-programming-guide.html>`_
   — the detailed information about using SparkSQL
