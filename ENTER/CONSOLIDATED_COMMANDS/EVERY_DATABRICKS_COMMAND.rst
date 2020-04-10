@@ -36,8 +36,8 @@ __
 |
 
 
-Parquet
----------
+CSV and Parquet
+----------------
 
 From the **outset**, let me say that "Structured Text" is probably a bit
 
@@ -62,6 +62,47 @@ Examples::
  .option("header", "true")
  .option("inferSchema", "true")
  .load("/FileStore/tables/state_income-9f7c5.csv")
+
+
+  myTargetPath = f"{workingDir}/file_name.parquet"
+  DF.write.mode("overwrite").parquet(myTargetPath)
+
+
+
+
+|
+
+
+
+CSV and Parquet
+----------------
+
+From the **outset**, let me say that "Structured Text" is probably a bit
+
+
+Examples::
+
+ display(dbutils.fs.ls(targetPath))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
