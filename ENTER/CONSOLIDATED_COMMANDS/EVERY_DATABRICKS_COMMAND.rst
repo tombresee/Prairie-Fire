@@ -8,6 +8,10 @@ Databricks Command Reference
 :Version: $Revision: 0001 $
 :Description: Consolidated Command Reference
 
+
+|
+
+
 .. contents::
 
 
