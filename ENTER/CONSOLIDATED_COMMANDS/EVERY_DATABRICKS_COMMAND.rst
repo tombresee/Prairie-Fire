@@ -51,6 +51,9 @@ Examples::
   .option("inferSchema", True)
   .csv("/mnt/training/my_file.csv") )
 
+ DF = spark.read.csv('/FileStore/tables/state_income-9f7c5.csv', header="true", inferSchema="true")
+
+
 
 
 
