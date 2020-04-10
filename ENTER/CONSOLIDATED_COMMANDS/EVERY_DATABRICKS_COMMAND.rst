@@ -1,8 +1,8 @@
-A ReStructuredText Primer
-=========================
+Databricks Command Reference
+============================
 
-:Author: Richard Jones
-:Version: $Revision: 5801 $
+:Author: Tom Bresee
+:Version: $Revision: 0001 $
 :Copyright: This document has been placed in the public domain.
 
 .. contents::
