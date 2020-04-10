@@ -3,7 +3,7 @@ Databricks Command Reference
 
 :Author: Tom Bresee
 :Version: $Revision: 0001 $
-:Copyright: This document has been placed in the public domain.
+:Description: Consolidated Command Reference
 
 .. contents::
 
