@@ -1,0 +1,7 @@
+
+
+
+push all DB archive files both azure and aws to master folder
+
+	fastest way of reviewing...
+

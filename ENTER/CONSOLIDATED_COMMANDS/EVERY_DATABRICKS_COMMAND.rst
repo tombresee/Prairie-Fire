@@ -36,6 +36,8 @@ __
 |
 
 
+
+
 CSV and Parquet
 ----------------
 
@@ -93,12 +95,22 @@ Examples::
 
 
 
+ETL 
+----------------
+
+
+
+Examples::
+
+
+ corruptDF.dropna("any")   drop all null rows
 
 
 
 
 
 
+|
 
 
 
