@@ -53,6 +53,10 @@ Examples::
 
  DF = spark.read.csv('/FileStore/tables/state_income-9f7c5.csv', header="true", inferSchema="true")
 
+ val sparkDF = spark.read.format("csv")
+ .option("header", "true")
+ .option("inferSchema", "true")
+ .load("/FileStore/tables/state_income-9f7c5.csv")
 
 
 
