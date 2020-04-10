@@ -66,7 +66,9 @@ Examples::
 
   myTargetPath = f"{workingDir}/file_name.parquet"
   DF.write.mode("overwrite").parquet(myTargetPath)
+  crimeRenamedColsDF.repartition(1).write.mode("overwrite").parquet(repartitionedPath)
 
+  
 
 
 
