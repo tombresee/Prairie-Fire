@@ -74,16 +74,18 @@ Examples::
 
 
 
-CSV and Parquet
+Dbutils
 ----------------
 
-From the **outset**, let me say that "Structured Text" is probably a bit
 
 
 Examples::
 
+ dbfs:/user/tbresee@mail.smu.edu/etl_part_1/etl1_07___loading_data_and_productionalizing_psp/crime.parquet
+
  display(dbutils.fs.ls(targetPath))
 
+ 
 
 
 
