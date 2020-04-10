@@ -44,13 +44,14 @@ From the **outset**, let me say that "Structured Text" is probably a bit
 
 For example::
 
-  This is a paragraph.  It's quite
-  short.
+ crimeDF = (spark.read
+  .option("delimiter", "\t")
+  .option("header", True)
+  .option("timestampFormat", "mm/dd/yyyy hh:mm:ss a")
+  .option("inferSchema", True)
+  .csv("/mnt/training/Chicago-Crimes-2018.csv") )
 
-     This paragraph will result in an indented block of
-     text, typically used for quoting other text.
 
-  This is another one.
 
 
 
