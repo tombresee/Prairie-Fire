@@ -23,20 +23,18 @@ __
    further resources, including a formal reference.
 
 
-Structure
+
+
+
+
+
+Parquet
 ---------
 
 From the **outset**, let me say that "Structured Text" is probably a bit
-of a misnomer.  It's more like "Relaxed Text" that uses certain
-consistent patterns.  These patterns are interpreted by a HTML
-converter to produce "Very Structured Text" that can be used by a web
-browser.
 
-The most basic pattern recognised is a **paragraph** (quickref__).
-That's a chunk of text that is separated by blank lines (one is
-enough).  Paragraphs must have the same indentation -- that is, line
-up at their left edge.  Paragraphs that start indented will result in
-indented quote paragraphs. For example::
+
+For example::
 
   This is a paragraph.  It's quite
   short.
@@ -45,6 +43,9 @@ indented quote paragraphs. For example::
      text, typically used for quoting other text.
 
   This is another one.
+
+
+
 
 Results in:
 
