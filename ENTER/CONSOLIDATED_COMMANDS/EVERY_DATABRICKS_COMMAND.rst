@@ -49,7 +49,7 @@ Examples::
   .option("header", True)
   .option("timestampFormat", "mm/dd/yyyy hh:mm:ss a")
   .option("inferSchema", True)
-  .csv("/mnt/training/Chicago-Crimes-2018.csv") )
+  .csv("/mnt/training/my_file.csv") )
 
 
 
