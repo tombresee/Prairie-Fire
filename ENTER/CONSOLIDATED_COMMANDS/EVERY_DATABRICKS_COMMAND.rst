@@ -51,7 +51,12 @@ Examples::
   .option("inferSchema", True)
   .csv("/mnt/training/my_file.csv") )
 
+
  DF = spark.read.csv('/FileStore/tables/state_income-9f7c5.csv', header="true", inferSchema="true")
+
+
+ spark.read.format('csv').options(header='true', inferSchema='true').load('zipcodes.csv')
+
 
  val sparkDF = spark.read.format("csv")
  .option("header", "true")
