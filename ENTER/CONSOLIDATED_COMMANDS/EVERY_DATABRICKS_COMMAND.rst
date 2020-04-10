@@ -1,6 +1,8 @@
 Databricks Command Reference
 ============================
 
+|
+
 :Author: Tom Bresee
 :Version: $Revision: 0001 $
 :Description: Consolidated Command Reference
