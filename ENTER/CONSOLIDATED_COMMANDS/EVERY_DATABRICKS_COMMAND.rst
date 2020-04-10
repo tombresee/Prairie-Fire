@@ -42,14 +42,25 @@ Parquet
 From the **outset**, let me say that "Structured Text" is probably a bit
 
 
-For example::
+Examples::
 
- crimeDF = (spark.read
+ DF = (spark.read
   .option("delimiter", "\t")
   .option("header", True)
   .option("timestampFormat", "mm/dd/yyyy hh:mm:ss a")
   .option("inferSchema", True)
   .csv("/mnt/training/Chicago-Crimes-2018.csv") )
+
+
+
+
+
+
+
+
+
+
+
 
 
 
