@@ -62,7 +62,7 @@ The Basics
 
 
 * `Spark on Colab <https://nbviewer.jupyter.org/github/tombresee/Prairie-Fire/blob/master/ENTER/ApacheSpark_on_Colab_quickandfast.ipynb>`_
-  — If you are trying to learn Spark, a very fast way to get going is to use this approach.  You can then have Spark running on Colab, and can practice commands quickly and efficiently. It's basically a quick way of spinning up Spark if you don't have local or cloud resources but you want to practice commands.  There is also a Colab button you can click at the top to spin up the whole notebook on your Colab environment instead of importing the notebook (click the top button).  External hyperlinks, like `Python <http://www.python.org/>`_.
+  — If you are trying to learn Spark, a very fast way to get going is to use this approach.  You can then have Spark running on Colab, and can practice commands quickly and efficiently. It's basically a quick way of spinning up Spark if you don't have local or cloud resources but you want to practice commands.  There is also a Colab button you can click at the top to spin up the whole notebook on your Colab environment instead of importing the notebook (click the top button).  Raw notebook `here <https://github.com/tombresee/Prairie-Fire/blob/master/ENTER/ApacheSpark_on_Colab_quickandfast.ipynb>`_.
 
 
 
