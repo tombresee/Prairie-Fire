@@ -82,16 +82,22 @@ Apache Spark
 
 
 * `Apache Spark Documentation <https://spark.apache.org/docs/latest/>`_
-  — the main documentation link (As of April 2020, core version is Apache Spark 2.4.5)
+  — the main documentation link (As of April 2020, core version is Apache Spark 2.4.5).  This link though will always get you to the very latest documentation information. 
 
 
 * `Contributing to Spark <https://spark.apache.org/contributing.html>`_
-  — the main link for contributing
+  — the main link for contributing, something I'm pushing more and more to do...
+
 
   
+* `Pyspark SQL API Module <https://spark.apache.org/docs/latest/api/python/pyspark.sql.html>`_
+  — if you can know how all of this works, you are doing very well 
+
+
 
 * `Spark SQL DataFrames and Datasets Guide <https://spark.apache.org/docs/latest/sql-programming-guide.html>`_
   — the detailed information about using SparkSQL
+
 
 
 
@@ -254,18 +260,30 @@ Next Generation DNA Sequencing (NGS)
 * `Google Genomics Home <https://cloud.google.com/genomics/#>`_
   — Main page overview of Google Genomics program for processing petabytes of genomic data
 
+
+
+
+
+|
+
+
+Follow Up
+---------------------------------------
+
+
 * `pyspark transformations <https://nbviewer.jupyter.org/github/jkthompson/pyspark-pictures/blob/master/pyspark-pictures.ipynb>`_
   — really good overviews of the transformations possible 
 
 
-* `json lines (not json) <http://jsonlines.org/>`_
-  —  this page describes the JSON Lines text format, also called newline-delimited JSON. JSON Lines is a convenient format for storing structured data that may be processed one record at a time. It works well with unix-style text processing tools and shell pipelines. It's a great format for log files. It's also a flexible format for passing messages between cooperating processes. SSON Lines handles tabular data cleanly and without ambiguity. Stream compressors like gzip or bzip2 are recommended for saving space, resulting in .jsonl.gz or .jsonl.bz2 files...
 
-  
+
 
 |
 |
 |
+
+
+
 
 
 Appendix - Ecosystem
