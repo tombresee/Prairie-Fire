@@ -12,11 +12,12 @@ Prairie Fire
 
 **What is this ?**  
 
-The following github repo (updated periodically) contains detailed information, worked jupyter notebooks, and scripts associated with:
+The following github repo (updated periodically) contains detailed information, worked jupyter notebooks, and consolidated scripts associated with:
 
 * Apache Spark
 * Databricks
 
+Nothing in this repo is proprietary or employment related, it is basically a good location for public engineers to go for Spark reference.  
 
 
 |
@@ -36,8 +37,11 @@ The following github repo (updated periodically) contains detailed information, 
 Why Apache Spark ? 
 =====================
 
-* Runs workloads 100x+ faster than conventional approaches
+* Runs workloads up to 100x+ faster than conventional approaches
 * True Distributed Processing
+* Extremely flexible 
+
+
 
 
 
