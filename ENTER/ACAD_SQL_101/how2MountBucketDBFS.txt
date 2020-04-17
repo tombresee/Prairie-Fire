@@ -1,0 +1,50 @@
+
+
+
+
+
+
+1.  Show me the buckets already mounted to my DBFS:
+
+	%fs mounts
+
+
+
+
+
+
+2.  Mount your own bucket to a new mount point. To do so, use the dbutils.fs.mount(..) function.
+
+	Below, mount a Databricks S3 bucket (using a read-only access and secret key pair), access one of the files in the bucket as a DBFS path, then unmount the bucket.
+
+	Caution The mount point must start with /mnt/.
+
+	Create the mount point with %fs mount.
+
+		Caution If the directory was already mounted, you would receive the following error:
+
+		Directory already mounted: /mnt/temp-training
+	
+	%fs mount s3a://AKIAJBRYNXGHORDHZB4A:a0BzE1bSegfydr3%2FGE3LSPM6uIV5A4hOUfpH8aFF@databricks-corp-training/common /mnt/temp-training
+
+
+
+
+
+
+
+3.  List the contents of the directory you just mounted:
+
+	%fs ls /mnt/temp-training
+
+	see everything:
+
+	dbfs:/mnt/temp-training/301/	301/	0
+	dbfs:/mnt/temp-training/Chicago-Crimes-2018.csv	Chicago-Crimes-2018.csv	5201668
+	dbfs:/mnt/temp-training/City-Data.delta/	City-Data.delta/	0
+	dbfs:/mnt/temp-training/City-Data.parquet/	City-Data.parquet/	0
+	dbfs:/mnt/temp-training/EDGAR-Log-20170329/	EDGAR-Log-20170329/	0
+	dbfs:/mnt/temp-training/StatLib/
+
+
+
