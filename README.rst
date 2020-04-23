@@ -210,6 +210,23 @@ Databricks
 
 
 
+* `Getting Started with Databricks <https://docs.databricks.com/getting-started/quick-start.html>`_
+ 
+
+
+
+|
+
+Databricks
+-------------
+
+
+* `Delta Table Transaction Log rev <https://databricks.com/blog/2019/08/21/diving-into-delta-lake-unpacking-the-transaction-log.html>`_
+
+* `Delta Metastore <https://docs.databricks.com/data/metastores/index.html#metastores>`_
+
+
+
 |
 
 
