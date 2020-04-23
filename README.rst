@@ -224,6 +224,7 @@ Databricks
 
 * `Delta Metastore <https://docs.databricks.com/data/metastores/index.html#metastores>`_
 
+* `Run a Spark job on Azure Databricks using the Azure portal <https://docs.microsoft.com/en-us/azure/azure-databricks/quickstart-create-databricks-workspace-portal?toc=/azure/databricks/toc.json&bc=/azure/databricks/breadcrumb/toc.json>`_
 
 
 |
