@@ -213,9 +213,8 @@ Databricks
 * `Getting Started with Databricks <https://docs.databricks.com/getting-started/quick-start.html>`_
  
 
-
-
 |
+
 
 Databricks
 -------------
