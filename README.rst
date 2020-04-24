@@ -5,6 +5,17 @@ Prairie Fire
 
 
 
+https://docs.microsoft.com/en-us/azure/databricks/dev-tools/api/latest/authentication
+
+
+
+# This installs MLflow for you only on Databricks Runtime
+# NOTE: this code does not work with ML runtime (see below)
+dbutils.library.installPyPI("mlflow", "1.0.0")
+dbutils.library.restartPython()
+
+
+
 |
 |
 
@@ -213,7 +224,23 @@ Databricks
 * `Getting Started with Databricks <https://docs.databricks.com/getting-started/quick-start.html>`_
  
 
+~~~~~~~~~~~~~~~~
+MLflow:
+~~~~~~~~~~~~~~~~
+
+
+* `MLflow QuickStart Python <https://docs.databricks.com/applications/mlflow/quick-start-python.html>`_
+ 
+
+
+
+ 
+
+
+
+
 |
+
 
 
 Databricks
@@ -227,7 +254,9 @@ Databricks
 * `Run a Spark job on Azure Databricks using the Azure portal <https://docs.microsoft.com/en-us/azure/azure-databricks/quickstart-create-databricks-workspace-portal?toc=/azure/databricks/toc.json&bc=/azure/databricks/breadcrumb/toc.json>`_
 
 
+
 |
+
 
 
 Scala

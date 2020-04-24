@@ -1,0 +1,209 @@
+/**
+ * IMPORTANT: please make sure to keep vars in sync with color.ts
+ */
+/*Buttons*/
+/* Select dropdowns */
+/* LEGACY CODE: DO NOT COPY. Reusable Functions */
+.input-underline {
+  box-shadow: none;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #dddddd;
+}
+/**
+ * IMPORTANT: please make sure to keep vars in sync with font.less
+ */
+#sparkui-iframe-body {
+  /* Hide all additional metrics by default. This is done here rather than using JavaScript to
+   * avoid slow page loads for stage pages with large numbers (e.g., thousands) of tasks. */
+}
+#sparkui-iframe-body .stage-details {
+  max-height: 100px;
+  overflow-y: auto;
+  margin: 0;
+  transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+}
+#sparkui-iframe-body .stage-details.collapsed {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border: none;
+}
+#sparkui-iframe-body span.expand-additional-metrics {
+  cursor: pointer;
+}
+#sparkui-iframe-body span.additional-metric-title {
+  cursor: pointer;
+}
+#sparkui-iframe-body .additional-metrics.collapsed {
+  display: none;
+}
+#sparkui-iframe-body .arrow-open {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+  float: left;
+  margin-top: 6px;
+}
+#sparkui-iframe-body .arrow-closed {
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid black;
+  display: inline-block;
+}
+#sparkui-iframe-body .scheduler_delay,
+#sparkui-iframe-body .gc_time,
+#sparkui-iframe-body .deserialization_time,
+#sparkui-iframe-body .serialization_time,
+#sparkui-iframe-body .getting_result_time {
+  display: none;
+}
+#sparkui-iframe-body span.expand-details {
+  font-size: 10pt;
+  cursor: pointer;
+  color: grey;
+  float: right;
+}
+#sparkui-iframe-body .navbar-static-top {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  background-color: #e6e8ea;
+  font-size: 13px;
+  font-weight: 200;
+  height: 26px;
+  z-index: 500;
+}
+#sparkui-iframe-body .navbar-static-top .navbar-inner {
+  background-image: none;
+  border-style: none;
+  height: 26px;
+  min-height: 26px;
+  padding-left: 0;
+  box-shadow: none;
+  border-bottom: 1px solid #e6e8ea;
+}
+#sparkui-iframe-body .navbar div.brand {
+  display: none;
+  width: 0;
+}
+#sparkui-iframe-body .navbar li {
+  height: 26px;
+}
+#sparkui-iframe-body .navbar .nav > .active a,
+#sparkui-iframe-body .navbar .nav > .active a:hover,
+#sparkui-iframe-body .navbar .nav > .active a:focus {
+  box-shadow: none;
+  background-color: inherit;
+}
+#sparkui-iframe-body .navbar .nav {
+  height: inherit;
+  margin-left: 8px;
+}
+#sparkui-iframe-body .navbar .nav li {
+  height: inherit;
+}
+#sparkui-iframe-body .navbar .nav li a {
+  height: inherit;
+  color: #9b9b9b;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+#sparkui-iframe-body .navbar .nav li.active a,
+#sparkui-iframe-body .navbar .nav li.active a:hover,
+#sparkui-iframe-body .navbar .nav li.active a:focus {
+  background-color: #DDDDDD;
+  border-radius: 10px;
+  margin: 3px 8px;
+  line-height: 20px;
+  height: 20px;
+}
+#sparkui-iframe-body p.navbar-text {
+  display: none;
+}
+#sparkui-iframe-body .navbar + .container-fluid {
+  padding-top: 26px;
+}
+#sparkui-iframe-body table.sortable thead {
+  cursor: pointer;
+}
+#sparkui-iframe-body table.sortable td {
+  word-wrap: break-word;
+  max-width: 600px;
+}
+#sparkui-iframe-body span.kill-link {
+  margin-right: 2px;
+  margin-left: 20px;
+  color: gray;
+  float: right;
+}
+#sparkui-iframe-body span.kill-link a {
+  color: gray;
+}
+#sparkui-iframe-body h1 {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif, "FontAwesome";
+  font-weight: 200;
+  line-height: 36px;
+  font-size: 33px;
+}
+#sparkui-iframe-body h2,
+#sparkui-iframe-body h2 .job-name {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif, "FontAwesome";
+  font-weight: 200;
+  line-height: 30px;
+  font-size: 27px;
+}
+#sparkui-iframe-body h3 {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif, "FontAwesome";
+  font-weight: 200;
+  line-height: 24px;
+  font-size: 22px;
+}
+#sparkui-iframe-body h4 {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif, "FontAwesome";
+  font-weight: 200;
+  line-height: 21px;
+  font-size: 18px;
+}
+#sparkui-iframe-body h5 {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif, "FontAwesome";
+  font-weight: 200;
+  line-height: 19px;
+  font-size: 16px;
+}
+#sparkui-iframe-body a {
+  color: #167b95;
+}
+#sparkui-iframe-body a:hover,
+#sparkui-iframe-body a:active {
+  color: #167b95;
+}
+#sparkui-iframe-body a[disabled] {
+  color: #bbb;
+  cursor: text;
+  pointer-events: none;
+}
+#sparkui-iframe-body body,
+#sparkui-iframe-body input,
+#sparkui-iframe-body .command-dots,
+#sparkui-iframe-body .ui-widget,
+#sparkui-iframe-body .ui-widget textarea,
+#sparkui-iframe-body .ui-widget input,
+#sparkui-iframe-body .ui-widget select,
+#sparkui-iframe-body .ui-widget button,
+#sparkui-iframe-body thead {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif, "FontAwesome";
+  font-size: 13px;
+  line-height: 18px;
+  font-weight: 400;
+}
+#sparkui-iframe-body .btn,
+#sparkui-iframe-body input,
+#sparkui-iframe-body select,
+#sparkui-iframe-body option {
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif, "FontAwesome";
+}
