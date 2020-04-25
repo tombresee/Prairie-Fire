@@ -81,7 +81,7 @@ Apache Spark
 -----------------------------------
 
 
-
+|
 
 * `Spark Tags <https://stackoverflow.com/questions/tagged/apache-spark>`_
   — Stack Overflow Apache Spark section, the best way to get hands-on learning
@@ -151,7 +151,7 @@ Apache Spark
 Databricks
 -----------------------------------
 
-
+|
 
 Main
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -214,7 +214,7 @@ Main
 
 * `Getting Started with Databricks <https://docs.databricks.com/getting-started/quick-start.html>`_
  
-
+|
 
 
 Delta Lake
@@ -228,6 +228,7 @@ Delta Lake
 * `Run a Spark job on Azure Databricks using the Azure portal <https://docs.microsoft.com/en-us/azure/azure-databricks/quickstart-create-databricks-workspace-portal?toc=/azure/databricks/toc.json&bc=/azure/databricks/breadcrumb/toc.json>`_
 
 
+|
 
 
 MLflow
@@ -276,7 +277,7 @@ Prairie Fire API v3
 
 
 |
-
+|
 
 
 
@@ -313,7 +314,7 @@ Next Generation DNA Sequencing (NGS)
 
 
 |
-
+|
 
 Follow Up
 ---------------------------------------
