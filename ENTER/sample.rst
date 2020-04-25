@@ -1,7 +1,7 @@
 A ReStructuredText Primer
 =========================
 
-:Author: Richard Jones
+:Author: Tom Bresee
 :Version: $Revision: 5801 $
 :Copyright: This document has been placed in the public domain.
 
@@ -21,6 +21,9 @@ __
 .. Note:: This document is an informal introduction to
    reStructuredText.  The `What Next?`_ section below has links to
    further resources, including a formal reference.
+
+
+
 
 
 Structure
