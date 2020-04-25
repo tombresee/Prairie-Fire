@@ -153,7 +153,7 @@ Databricks
 
 
 
-Main:
+Main
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * `Documentation <https://docs.databricks.com/>`_
@@ -217,7 +217,7 @@ Main:
 
 
 
-Delta Lake:
+Delta Lake
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
@@ -230,7 +230,7 @@ Delta Lake:
 
 
 
-MLflow:
+MLflow
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
