@@ -217,6 +217,16 @@ Main
 |
 
 
+AWS S3 Bucket
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* `DBX S3 Interconnect <https://docs.databricks.com/data/data-sources/aws/amazon-s3.html>`_
+  — link account to S3 bucket
+
+
+|
+
+
 Delta Lake
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -226,6 +236,7 @@ Delta Lake
 * `Delta Metastore <https://docs.databricks.com/data/metastores/index.html#metastores>`_
 
 * `Run a Spark job on Azure Databricks using the Azure portal <https://docs.microsoft.com/en-us/azure/azure-databricks/quickstart-create-databricks-workspace-portal?toc=/azure/databricks/toc.json&bc=/azure/databricks/breadcrumb/toc.json>`_
+
 
 
 |
