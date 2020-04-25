@@ -5,7 +5,6 @@ Prairie Fire
 
 
 
-
 |
 |
 
@@ -152,6 +151,10 @@ Apache Spark
 Databricks
 -----------------------------------
 
+
+
+Main:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * `Documentation <https://docs.databricks.com/>`_
   — the main documentation link for Databricks
