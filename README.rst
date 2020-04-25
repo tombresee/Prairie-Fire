@@ -5,16 +5,6 @@ Prairie Fire
 
 
 
-https://docs.microsoft.com/en-us/azure/databricks/dev-tools/api/latest/authentication
-
-
-
-# This installs MLflow for you only on Databricks Runtime
-# NOTE: this code does not work with ML runtime (see below)
-dbutils.library.installPyPI("mlflow", "1.0.0")
-dbutils.library.restartPython()
-
-
 
 |
 |
@@ -87,9 +77,9 @@ References
 
 
 
-Apache Spark
----------------
 
+Apache Spark
+-----------------------------------
 
 
 
@@ -160,7 +150,7 @@ Apache Spark
 
 
 Databricks
--------------
+-----------------------------------
 
 
 * `Documentation <https://docs.databricks.com/>`_
@@ -224,9 +214,21 @@ Databricks
 
 
 
+Delta Lake:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+* `Delta Table Transaction Log rev <https://databricks.com/blog/2019/08/21/diving-into-delta-lake-unpacking-the-transaction-log.html>`_
+
+* `Delta Metastore <https://docs.databricks.com/data/metastores/index.html#metastores>`_
+
+* `Run a Spark job on Azure Databricks using the Azure portal <https://docs.microsoft.com/en-us/azure/azure-databricks/quickstart-create-databricks-workspace-portal?toc=/azure/databricks/toc.json&bc=/azure/databricks/breadcrumb/toc.json>`_
+
+
+
 
 MLflow:
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 * `MLflow QuickStart Python <https://docs.databricks.com/applications/mlflow/quick-start-python.html>`_
@@ -239,29 +241,13 @@ MLflow:
 
 
 
-
 |
 
-
-
-Databricks
--------------
-
-
-* `Delta Table Transaction Log rev <https://databricks.com/blog/2019/08/21/diving-into-delta-lake-unpacking-the-transaction-log.html>`_
-
-* `Delta Metastore <https://docs.databricks.com/data/metastores/index.html#metastores>`_
-
-* `Run a Spark job on Azure Databricks using the Azure portal <https://docs.microsoft.com/en-us/azure/azure-databricks/quickstart-create-databricks-workspace-portal?toc=/azure/databricks/toc.json&bc=/azure/databricks/breadcrumb/toc.json>`_
-
-
-
-|
 
 
 
 Scala
---------
+----------------------------
 
 
 * `Scala <https://www.scala-lang.org/>`_
@@ -277,7 +263,7 @@ Scala
 
 
 Prairie Fire API v3
---------
+----------------------------
 
 
 * `API <https://api.github.com/repos/tombresee/Prairie-Fire/contents/ENTER>`_
@@ -287,6 +273,7 @@ Prairie Fire API v3
 
 
 |
+
 
 
 
@@ -333,13 +320,20 @@ Follow Up
   — really good overviews of the transformations possible 
 
 
+https://docs.microsoft.com/en-us/azure/databricks/dev-tools/api/latest/authentication
+
+
+
+# This installs MLflow for you only on Databricks Runtime
+# NOTE: this code does not work with ML runtime (see below)
+dbutils.library.installPyPI("mlflow", "1.0.0")
+dbutils.library.restartPython()
 
 
 
 |
 |
 |
-
 
 
 
