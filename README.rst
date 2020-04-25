@@ -122,7 +122,6 @@ Apache Spark
 
 
 
-
 * `Spark Python API Docs  <https://spark.apache.org/docs/latest/api/python/index.html>`_
   — covers pyspark .methods and commands 
 
@@ -220,11 +219,12 @@ Databricks
   — github location of the book `Spark - The Definitive Guide' that can also be run in Databricks via the DBFS location:  dbfs:/databricks-datasets/definitive-guide/data
 
 
-
 * `Getting Started with Databricks <https://docs.databricks.com/getting-started/quick-start.html>`_
  
 
-~~~~~~~~~~~~~~~~
+
+
+
 MLflow:
 ~~~~~~~~~~~~~~~~
 
@@ -232,9 +232,10 @@ MLflow:
 * `MLflow QuickStart Python <https://docs.databricks.com/applications/mlflow/quick-start-python.html>`_
  
 
-
-
+* `MLflow example github <https://github.com/mlflow/mlflow-example>`_
  
+
+
 
 
 
