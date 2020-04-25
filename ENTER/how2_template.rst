@@ -1,7 +1,7 @@
-A ReStructuredText Primer
+MLflow
 =========================
 
-:Author: Richard Jones
+:Author: Tom Bresee
 :Version: $Revision: 5801 $
 :Copyright: This document has been placed in the public domain.
 
@@ -215,8 +215,7 @@ Preformatting (code samples)
 
 __ quickref.html#literal-blocks
 
-To just include a chunk of preformatted, never-to-be-fiddled-with
-text, finish the prior paragraph with "``::``".  The preformatted
+To jusprior paragraph with "``::``".  The preformatted
 block is finished when the text falls back to the same indentation
 level as a paragraph prior to the preformatted block.  For example::
 
@@ -268,10 +267,7 @@ These are a single line of text (one or more words) with adornment: an
 underline alone, or an underline and an overline together, in dashes
 "``-----``", equals "``======``", tildes "``~~~~~~``" or any of the
 non-alphanumeric characters ``= - ` : ' " ~ ^ _ * + # < >`` that you
-feel comfortable with.  An underline-only adornment is distinct from
-an overline-and-underline adornment using the same character.  The
-underline/overline must be at least as long as the title text.  Be
-consistent, since all sections marked with the same adornment style
+feelns marked with the same adornment style
 are deemed to be at the same level::
 
   Chapter 1 Title
@@ -307,12 +303,6 @@ pseudo-XML::
     <section>
         <title>
             Chapter 2 Title
-
-(Pseudo-XML uses indentation for nesting and has no end-tags.  It's
-not possible to show actual processed output, as in the other
-examples, because sections cannot exist inside block quotes.  For a
-concrete example, compare the section structure of this document's
-source text and processed output.)
 
 Note that section headers are available as link targets, just using
 their name.  To link to the Lists_ heading, I write "``Lists_``".  If
