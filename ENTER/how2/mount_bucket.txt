@@ -1,0 +1,186 @@
+
+
+Amazon S3 is a service for storing large amounts of unstructured object data, such as text or binary data. 
+This article explains how to access AWS S3 buckets by mounting buckets using DBFS or directly using APIs.
+
+
+
+**************************
+Mount S3 Buckets with DBFS
+**************************
+
+Mount an S3 bucket
+
+You can mount an S3 bucket through Databricks File System (DBFS). The mount is a pointer to an S3 location, so the data is never synced locally.
+
+Once a mount point is created through a cluster, users of that cluster can immediately access the mount point. To use the mount point in another 
+running cluster, you must run dbutils.fs.refreshMounts() on that running cluster to make the newly created mount point available for use.
+
+Mount a bucket using instance profiles
+One way to manage authentication and authorization for an S3 bucket is to use instance profiles. The type of access to the objects in the bucket is determined by the permissions granted to the instance profile. If the role has write access, users of the mount point can write objects in the bucket. If the role has read access, users of the mount point will be able to read objects in the bucket.
+
+Configure your cluster with an instance profile.
+
+Mount the bucket.
+
+Python
+Copy to clipboardCopy
+AWS_BUCKET_NAME = "<aws-bucket-name>"
+MOUNT_NAME = "<mount-name>"
+dbutils.fs.mount("s3a://%s" % AWS_BUCKET_NAME, "/mnt/%s" % MOUNT_NAME)
+display(dbutils.fs.ls("/mnt/%s" % MOUNT_NAME))
+Scala
+Copy to clipboardCopy
+val AwsBucketName = "<aws-bucket-name>"
+val MountName = "<mount-name>"
+
+dbutils.fs.mount(s"s3a://$AwsBucketName", s"/mnt/$MountName")
+display(dbutils.fs.ls(s"/mnt/$MountName"))
+Mount the bucket using keys retrieved from secrets
+You can also use AWS keys to mount a bucket, although we do not recommend doing so.
+
+Important
+
+All users have write and write read access to the objects in S3 buckets mounted to DBFS using keys.
+
+If you use keys, for leveraging credentials safely in Databricks, we recommend that you follow the Secrets user guide.
+
+Python
+Scala
+Copy to clipboardCopy
+ACCESS_KEY = dbutils.secrets.get(scope = "aws", key = "aws-access-key")
+SECRET_KEY = dbutils.secrets.get(scope = "aws", key = "aws-secret-key")
+ENCODED_SECRET_KEY = SECRET_KEY.replace("/", "%2F")
+AWS_BUCKET_NAME = "<aws-bucket-name>"
+MOUNT_NAME = "<mount-name>"
+
+dbutils.fs.mount("s3a://%s:%s@%s" % (ACCESS_KEY, ENCODED_SECRET_KEY, AWS_BUCKET_NAME), "/mnt/%s" % MOUNT_NAME)
+display(dbutils.fs.ls("/mnt/%s" % MOUNT_NAME))
+Access files in your S3 bucket as if they were local files
+Python
+Scala
+Copy to clipboardCopy
+df = spark.read.text("/mnt/%s/...." % MOUNT_NAME)
+or
+
+Copy to clipboardCopy
+df = spark.read.text("dbfs:/MOUNT_NAME/....")
+Unmount an S3 bucket
+To unmount a mount point, use the following command:
+
+Python
+Scala
+Copy to clipboardCopy
+dbutils.fs.unmount("/mnt/MOUNT_NAME")
+Access S3 buckets directly
+Alternative 1: Set AWS keys in the Spark context
+This allows Apache Spark workers to access your S3 bucket without requiring the credentials in the path. You do not need to escape your secret key.
+
+Important
+
+When using AWS keys to access S3, always set the configuration properties fs.s3n.awsAccessKeyId and fs.s3n.awsSecretAccessKey as shown below; the properties fs.s3a.access.key and fs.s3a.secret.key are not supported.
+
+Python
+Copy to clipboardCopy
+ACCESS_KEY = dbutils.secrets.get(scope = "aws", key = "aws-access-key")
+SECRET_KEY = dbutils.secrets.get(scope = "aws", key = "aws-secret-key")
+sc._jsc.hadoopConfiguration().set("fs.s3n.awsAccessKeyId", ACCESS_KEY)
+sc._jsc.hadoopConfiguration().set("fs.s3n.awsSecretAccessKey", SECRET_KEY)
+myRDD = sc.textFile("s3a://%s/.../..." % BUCKET_NAME)
+myRDD.count()
+Alternative 2: Encode keys in URI
+Use any Spark command for creating RDDs, DataFrames, and Datasets from data on a file system. You must URL escape the secret key.
+
+Python
+Copy to clipboardCopy
+ACCESS_KEY = dbutils.secrets.get(scope = "aws", key = "aws-access-key")
+SECRET_KEY = dbutils.secrets.get(scope = "aws", key = "aws-secret-key")
+ENCODED_SECRET_KEY = SECRET_KEY.replace("/", "%2F")
+myRDD = sc.textFile("s3a://%s:%s@%s/.../..." % ACCESS_KEY, ENCODED_SECRET_KEY, BUCKET_NAME)
+myRDD.count()
+Important
+
+Databricks does not recommend this method.
+
+Alternative 3: Use Boto
+You can use the Boto Python library to programmatically write and read data from S3. However, this is not done in parallel.
+
+Important
+
+Databricks does not recommend this method.
+
+Encrypt data in S3 buckets
+Databricks supports server-side encryption.
+
+Server-side encryption
+This section covers how to use server-side encryption when writing files in S3 through DBFS. Databricks supports Amazon S3-managed encryption keys (SSE-S3) and AWS KMS–managed encryption keys (SSE-KMS).
+
+Write files using SSE-S3
+To mount your S3 bucket with SSE-S3, run:
+
+Scala
+Copy to clipboardCopy
+dbutils.fs.mount(s"s3a://$AccessKey:$SecretKey@$AwsBucketName", s"/mnt/$MountName", "sse-s3")
+To write files to the corresponding S3 bucket with SSE-S3, run:
+
+Scala
+Copy to clipboardCopy
+dbutils.fs.put(s"/mnt/$MountName", "<file content>")
+Write files using SSE-KMS
+Mount a source directory passing in sse-kms or sse-kms:$KmsKey as the encryption type.
+
+To mount your S3 bucket with SSE-KMS using the default KMS master key, run:
+
+Scala
+Copy to clipboardCopy
+dbutils.fs.mount(s"s3a://$AccessKey:$SecretKey@$AwsBucketName", s"/mnt/$MountName", "sse-kms")
+To mount your S3 bucket with SSE-KMS using a specific KMS key, run:
+
+Scala
+Copy to clipboardCopy
+dbutils.fs.mount(s"s3a://$AccessKey:$SecretKey@$AwsBucketName", s"/mnt/$MountName", "sse-kms:$KmsKey")
+To write files to the S3 bucket with SSE-KMS, run:
+
+Scala
+Copy to clipboardCopy
+dbutils.fs.put(s"/mnt/$MountName", "<file content>")
+Configure KMS encryption
+If you want to use the s3a:// paths in your code, you must set up the following global KMS encryption properties in a Spark configuration setting or using an init script. Configure the spark.hadoop.fs.s3a.server-side-encryption-kms-master-key-id key with your own key ARN.
+
+ini
+Copy to clipboardCopy
+spark.hadoop.fs.s3a.server-side-encryption-kms-master-key-id arn:aws:kms:<region>:<aws-account-id>:key/<bbbbbbbb-ddd-ffff-aaa-bdddddddddd>
+spark.hadoop.fs.s3a.server-side-encryption-algorithm aws:kms
+spark.hadoop.fs.s3a.impl com.databricks.s3a.S3AFileSystem
+To use these configurations you must also configure an instance profile and add the instance profile as a key user for the KMS key provided in the configuration. To add key user permission to an instance profile’s IAM role:
+
+Go to the IAM service.
+Click Encryption Keys at the bottom of the sidebar.
+Click the key that you want to add permission to.
+In the Key Users section, click Add.
+Select the checkbox next to the IAM role.
+Click Attach.
+Init script
+You can test the global encryption setting by running the following code in a notebook cell, and launching a cluster named test-kms. Once you verify that encryption is working, remove test-kms, and rerun the cell to enable encryption on all clusters.
+
+Python
+Copy to clipboardCopy
+dbutils.fs.put("/databricks/init/test-kms/set-kms.sh", """
+#!/bin/bash
+
+cat >/databricks/driver/conf/aes-encrypt-custom-spark-conf.conf <<EOL
+[driver] {
+  "spark.hadoop.fs.s3a.server-side-encryption-kms-master-key-id" = "arn:aws:kms:<region>:<aws-account-id>:key/<bbbbbbbb-ddd-ffff-aaa-bdddddddddd>"
+  "spark.hadoop.fs.s3a.server-side-encryption-algorithm" = "aws:kms"
+  "spark.hadoop.fs.s3a.impl" = "com.databricks.s3a.S3AFileSystem"
+}
+EOL
+""", True)
+Access Requester Pays buckets
+This feature requires Databricks Runtime 5.3 or above.
+
+To enable access to Requester Pays buckets, add the following line to your cluster’s Spark configuration:
+
+Scala
+Copy to clipboardCopy
+spark.hadoop.fs.s3a.requester-pays.enabled true
