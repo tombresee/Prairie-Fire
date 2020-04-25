@@ -262,6 +262,25 @@ MLflow
 
 
 
+|
+
+
+
+
+Dev Day - AWS 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* `Notebook I <https://pages.databricks.com/rs/094-YMS-629/images/01-Delta%20Lake%20Workshop%20-%20Delta%20Lake%20Primer.html>`_
+  — 1 of 3 
+
+* `Notebook II <https://pages.databricks.com/rs/094-YMS-629/images/01-Delta%20Lake%20Workshop%20-%20Delta%20Lake%20Primer.html>`_
+  — 2 of 3 
+
+* `Notebook III <https://pages.databricks.com/rs/094-YMS-629/images/01-Delta%20Lake%20Workshop%20-%20Delta%20Lake%20Primer.html>`_
+  — 3 of 3
+
+
+
 
 |
 
