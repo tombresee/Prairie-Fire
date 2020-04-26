@@ -31,7 +31,7 @@ Nothing in this repo is proprietary or employment related, it is basically a goo
 
 
 |
-
+|
 
 Why Apache Spark ? 
 =====================
@@ -44,7 +44,8 @@ Why Apache Spark ?
 
 
 
-
+|
+|
 
 
 Jupyter Notebooks
