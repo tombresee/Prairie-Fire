@@ -42,10 +42,9 @@ Why Apache Spark ?
 
 
 
-
-
 |
 |
+
 
 
 Jupyter Notebooks
@@ -143,12 +142,15 @@ Apache Spark
 
 
 |
+|
+
+
 
 
 Databricks
 -----------------------------------
 
-|
+
 
 Main
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -211,7 +213,8 @@ Main
 
 * `Getting Started with Databricks <https://docs.databricks.com/getting-started/quick-start.html>`_
  
-|
+
+
 
 
 AWS S3 Bucket
@@ -221,7 +224,7 @@ AWS S3 Bucket
   — link account to S3 bucket
 
 
-|
+
 
 
 Delta Lake
@@ -236,7 +239,6 @@ Delta Lake
 
 
 
-|
 
 
 MLflow
@@ -257,11 +259,6 @@ MLflow
 
 
 
-|
-
-
-
-
 Dev Day - AWS 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -276,7 +273,7 @@ Dev Day - AWS
 
 
 
-
+|
 |
 
 
@@ -295,6 +292,7 @@ Scala
 
 
 
+|
 |
 
 
