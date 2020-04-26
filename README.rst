@@ -9,8 +9,18 @@ Prairie Fire
 
 
 
+.. contents::
 
-**What is this ?**  
+.. section-numbering::
+
+
+|
+|
+
+
+What is this repo ? 
+=====================
+
 
 The following github repo (updated periodically) contains detailed information, worked jupyter notebooks, and consolidated scripts associated with:
 
@@ -20,17 +30,6 @@ The following github repo (updated periodically) contains detailed information, 
 Nothing in this repo is proprietary or employment related, it is basically a good location for public engineers to go for Spark reference.  
 
 
-|
-|
-
-
-
-.. contents::
-
-.. section-numbering::
-
-
-|
 |
 
 
@@ -43,11 +42,6 @@ Why Apache Spark ?
 
 
 
-
-
-|
-|
-|
 
 
 
