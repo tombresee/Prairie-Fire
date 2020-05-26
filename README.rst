@@ -217,20 +217,24 @@ Main
 
 
 
-AWS S3 Bucket
+Azure Databricks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* `Main Documentation Page <https://docs.microsoft.com/en-us/azure/azure-databricks/>`_
+
+* `Run a Spark job on Azure Databricks using the Azure portal <https://docs.microsoft.com/en-us/azure/azure-databricks/quickstart-create-databricks-workspace-portal?toc=/azure/databricks/toc.json&bc=/azure/databricks/breadcrumb/toc.json>`_
+  
+
+
+
+
+AWS Databricks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 * `DBX S3 Interconnect <https://docs.databricks.com/data/data-sources/aws/amazon-s3.html>`_
   — link account to S3 bucket
 
-
-
-
-
-Azure Bucket Access 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-* `Run a Spark job on Azure Databricks using the Azure portal <https://docs.microsoft.com/en-us/azure/azure-databricks/quickstart-create-databricks-workspace-portal?toc=/azure/databricks/toc.json&bc=/azure/databricks/breadcrumb/toc.json>`_
 
 
 
