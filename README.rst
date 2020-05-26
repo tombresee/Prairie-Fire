@@ -33,6 +33,7 @@ Nothing in this repo is proprietary or employment related, it is basically a goo
 |
 |
 
+
 Why Apache Spark ? 
 =====================
 
@@ -46,12 +47,10 @@ Why Apache Spark ?
 |
 
 
-
 Jupyter Notebooks
 =========================================
 
-As progression is made step-by-step, I will upload pertinent jupyter notebooks.  
-
+|
 
 The Basics
 ---------------
@@ -59,7 +58,6 @@ The Basics
 
 * `Spark on Colab <https://nbviewer.jupyter.org/github/tombresee/Prairie-Fire/blob/master/ENTER/ApacheSpark_on_Colab_quickandfast.ipynb>`_
   — If you are trying to learn Spark, a very fast way to get going is to use this approach.  You can then have Spark running on Colab, and can practice commands quickly and efficiently. It's basically a quick way of spinning up Spark if you don't have local or cloud resources but you want to practice commands.  There is also a Colab button you can click at the top to spin up the whole notebook on your Colab environment instead of importing the notebook (click the top button).  Raw notebook `here <https://github.com/tombresee/Prairie-Fire/blob/master/ENTER/ApacheSpark_on_Colab_quickandfast.ipynb>`_.
-
 
 
 |
@@ -78,6 +76,7 @@ Apache Spark
 
 
 |
+
 
 * `Spark Tags <https://stackoverflow.com/questions/tagged/apache-spark>`_
   — Stack Overflow Apache Spark section, the best way to get hands-on learning
@@ -312,6 +311,7 @@ Scala
 |
 
 
+
 Prairie Fire API v3
 ----------------------------
 
@@ -321,9 +321,9 @@ Prairie Fire API v3
 
 
 
+|
+|
 
-|
-|
 
 
 
@@ -357,10 +357,10 @@ Next Generation DNA Sequencing (NGS)
 
 
 
-
-
 |
 |
+
+
 
 Follow Up
 ---------------------------------------
@@ -374,10 +374,6 @@ https://docs.microsoft.com/en-us/azure/databricks/dev-tools/api/latest/authentic
 
 
 
-# This installs MLflow for you only on Databricks Runtime
-# NOTE: this code does not work with ML runtime (see below)
-dbutils.library.installPyPI("mlflow", "1.0.0")
-dbutils.library.restartPython()
 
 
 
@@ -388,20 +384,17 @@ dbutils.library.restartPython()
 
 
 
-Appendix - Ecosystem
+Appendix - Notes
 =====================================================
 
 
 
-.. class:: no-web
+```This installs MLflow for you only on Databricks Runtime
+# NOTE: this code does not work with ML runtime (see below)
+dbutils.library.installPyPI("mlflow", "1.0.0")
+dbutils.library.restartPython()```
 
 
-    .. image:: https://spark.apache.org/images/spark-runs-everywhere.png
-        :alt: HTTPie in action
-        :width: 100%
-        :align: center
-
-.. class:: no-web no-pdf
 
 
 
