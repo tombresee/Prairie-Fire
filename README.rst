@@ -369,8 +369,7 @@ Follow Up
 * `pyspark transformations <https://nbviewer.jupyter.org/github/jkthompson/pyspark-pictures/blob/master/pyspark-pictures.ipynb>`_
   — really good overviews of the transformations possible 
 
-
-https://docs.microsoft.com/en-us/azure/databricks/dev-tools/api/latest/authentication
+* https://docs.microsoft.com/en-us/azure/databricks/dev-tools/api/latest/authentication
 
 
 
